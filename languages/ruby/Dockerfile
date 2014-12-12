@@ -1,4 +1,4 @@
-FROM jolicode/base
+FROM brownman/base
 MAINTAINER Joel Wurtz <jwurtz@jolicode.com>
 
 ENV PATH $HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH
