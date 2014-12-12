@@ -1,4 +1,4 @@
-FROM jolicode/base
+FROM brownman/ruby-1.9.3
 MAINTAINER Joel Wurtz <jwurtz@jolicode.com>
 
 RUN sudo apt-get update && \
