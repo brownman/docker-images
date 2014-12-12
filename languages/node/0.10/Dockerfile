@@ -1,4 +1,4 @@
-FROM jolicode/nvm
+FROM brownman/nvm
 MAINTAINER Joel Wurtz <jwurtz@jolicode.com>
 
 ENV NODE_VERSION 0.10
