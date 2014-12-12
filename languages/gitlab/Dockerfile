@@ -7,7 +7,8 @@ MAINTAINER  pgolm "golm.peter@gmail.com"
 ENV DEBIAN_FRONTEND noninteractive
 
 # Config
-ENV 		INSTALL_RUBY_VERSION 2.1.0
+#ENV 		INSTALL_RUBY_VERSION 2.1.0
+ENV 		INSTALL_RUBY_VERSION 1.9.3
 
 # apt-get deps
 RUN apt-get update -y
@@ -31,14 +32,14 @@ USER		gitlab_ci_runner
 ENV 		HOME /home/gitlab_ci_runner
 
 # install ruby, bundler
-RUN 		wget -qO - https://raw.github.com/fesplugas/rbenv-installer/master/bin/rbenv-installer | bash
-ENV 		RBENV_ROOT ${HOME}/.rbenv
-ENV 		PATH ${RBENV_ROOT}/bin:${PATH}
+#RUN 		wget -qO - https://raw.github.com/fesplugas/rbenv-installer/master/bin/rbenv-installer | bash
+#ENV 		RBENV_ROOT ${HOME}/.rbenv
+#ENV 		PATH ${RBENV_ROOT}/bin:${PATH}
 
-RUN 		rbenv install $INSTALL_RUBY_VERSION
-RUN 		rbenv global $INSTALL_RUBY_VERSION
-RUN 		echo "eval \"\$(rbenv init -)\"" >> $HOME/.profile
-RUN         . $HOME/.profile && gem install bundler
+#RUN 		rbenv install $INSTALL_RUBY_VERSION
+#RUN 		rbenv global $INSTALL_RUBY_VERSION
+#RUN 		echo "eval \"\$(rbenv init -)\"" >> $HOME/.profile
+#RUN         . $HOME/.profile && gem install bundler
 
 # install gitlab-ci-runner
 
