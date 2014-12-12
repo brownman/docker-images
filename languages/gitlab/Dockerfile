@@ -1,4 +1,4 @@
-FROM        brownman/node-0.10.0
+FROM        brownman/node-0.10
 
 #ubuntu:14.10
 MAINTAINER  pgolm "golm.peter@gmail.com"
