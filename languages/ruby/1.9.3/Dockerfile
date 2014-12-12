@@ -1,4 +1,4 @@
-FROM jolicode/rbenv
+FROM brownman/rbenv
 
 # Install multiple versions of ruby
 RUN rbenv install 1.9.3-p484 && rbenv global 1.9.3-p484
