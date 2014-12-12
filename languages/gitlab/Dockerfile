@@ -1,4 +1,4 @@
-FROM        brownman/node-0.10
+FROM        brownman/ruby-2.1.0
 
 #ubuntu:14.10
 MAINTAINER  pgolm "golm.peter@gmail.com"
@@ -7,8 +7,8 @@ MAINTAINER  pgolm "golm.peter@gmail.com"
 ENV DEBIAN_FRONTEND noninteractive
 
 # Config
-#ENV 		INSTALL_RUBY_VERSION 2.1.0
-ENV 		INSTALL_RUBY_VERSION 1.9.3
+ENV 		INSTALL_RUBY_VERSION 2.1.0
+#ENV 		INSTALL_RUBY_VERSION 1.9.3
 
 # apt-get deps
 RUN apt-get update -y
