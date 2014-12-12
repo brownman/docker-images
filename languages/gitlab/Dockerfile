@@ -11,14 +11,14 @@ ENV 		INSTALL_RUBY_VERSION 2.1.0
 #ENV 		INSTALL_RUBY_VERSION 1.9.3
 
 # apt-get deps
-RUN apt-get update -y
-RUN apt-get upgrade -y
+#RUN apt-get update -y
+#RUN apt-get upgrade -y
 
 #RUN         apt-get install -y -q 
-RUN apt-get install -y curl libxml2-dev libxslt-dev libcurl4-openssl-dev libreadline6-dev libssl-dev patch build-essential zlib1g-dev openssh-server libyaml-dev libicu-dev \
- wget git build-essential libicu-dev \ 
- lsb-release software-properties-common tklib zlib1g-dev libssl-dev \
-libxml2 libxml2-dev libxslt1-dev
+#RUN echo sudo apt-get install -y curl libxml2-dev libxslt-dev libcurl4-openssl-dev libreadline6-dev libssl-dev patch build-essential zlib1g-dev openssh-server libyaml-dev libicu-dev \
+# wget git build-essential libicu-dev \ 
+# lsb-release software-properties-common tklib zlib1g-dev libssl-dev \
+#libxml2 libxml2-dev libxslt1-dev
 # libreadline-gplv2-dev 
 
 #The following packages have unmet dependencies:
