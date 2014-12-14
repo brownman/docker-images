@@ -1,8 +1,8 @@
 FROM ubuntu:precise
 #  mkdir -p $HOME && \
 # ADD $USER1 User
-ENV HOME /home/gitlab_ci_runner
 ENV USER1 gitlab_ci_runner
+ENV HOME /home/$USER1
 
 
 RUN addgroup --gid=1000 $USER1 && \
