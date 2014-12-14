@@ -1,5 +1,6 @@
-# Jolicode Docker images
+[ERR?](https://registry.hub.docker.com/u/brownman/gitlab/builds_history/97800/)
+===
 
-Basic images for differents usages, this images are also used by http://github.com/jolicode/JoliCi
+[![Circle CI](https://circleci.com/gh/brownman/docker-images.svg?style=svg)](https://circleci.com/gh/brownman/docker-images)
 
 - http://www.yegor256.com/2014/08/29/docker-non-root.html
