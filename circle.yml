@@ -1,8 +1,21 @@
 machine:
   services:
     - docker
+  environment:
+    CONTAINER: 'brownman/docker_rootless'
+    timeout: 600
+    container_path: ./languages/ruby
+    container_name: brownman/rbenv
 
 dependencies:
   override:
     - docker info
-    - docker build -t brownman/rbenv ./languages/ruby
+    - docker build -t $container_name $container_path
+    
+  cache_directories:
+    - "~/docker"
+    
+test:
+  override:
+    - docker run -t $container_name $container_path bash -c 'env | grep rbenv'
+    
