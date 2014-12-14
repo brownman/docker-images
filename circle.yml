@@ -13,13 +13,11 @@ machine:
 dependencies:
   override:
     - docker info
-    - docker build -t $CONTAINER - < $container_path
-    
-  override:
     #load
     - if [[ -e $file_cache ]]; then docker load -i file_cache; fi
     #build
-    - docker build -t $CONTAINER .
+ #   - docker build -t $CONTAINER .
+    - docker build -t $CONTAINER - < $container_path
     #save
     - mkdir -p $dir_cache; docker save $CONTAINER > $file_cache
     #info
