@@ -4,7 +4,7 @@ machine:
     
   environment:   
     timeout: 600
-    alias: apt
+    alias: user
     CONTAINER:       brownman/$alias
     container_path:  ./languages/$alias
     dir_cache:       ~/docker
