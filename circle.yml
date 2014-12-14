@@ -17,7 +17,7 @@ dependencies:
     #load layers
     - if [[ -e $file_cache ]]; then docker load -i $file_cache; fi
     #build
-    - docker build -t $CONTAINER - < $container_path
+    - docker build -t $CONTAINER $container_path
     #save layers
     - mkdir -p $dir_cache; docker save $CONTAINER > $file_cache
     #info
