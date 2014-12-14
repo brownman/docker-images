@@ -1,5 +1,7 @@
-FROM brownman/ruby-1.9.3
+FROM brownman/apt
 MAINTAINER Joel Wurtz <jwurtz@jolicode.com>
+USER $USER1
+
 
 RUN sudo apt-get update && \
     sudo apt-get install -y build-essential libssl-dev libmysqlclient-dev && \
