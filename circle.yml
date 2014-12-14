@@ -1,0 +1,33 @@
+machine:
+  services:
+    - docker
+    
+  environment:   
+    timeout: 600
+    alias: gitlab
+    CONTAINER:       brownman/$alias
+    container_path:  ./languages/$alias
+    file_test:  ./languages/$alias/test.sh
+    dir_cache:       ~/docker
+    file_cache:      $dir_cache/${alias}.tar
+
+dependencies:
+  override:
+    - docker images | wc -l
+    - if [[ -e $file_cache ]]; then docker load -i $file_cache; fi
+    - docker build -t $CONTAINER $container_path
+    - mkdir -p $dir_cache; docker save $CONTAINER > $file_cache
+    - docker images | wc -l
+    - docker info
+
+  cache_directories:
+    - "~/docker"
+    
+test:
+  override:
+    - docker run -t $CONTAINER bash -c - < $file_test
+
+    
+
+    
+  
