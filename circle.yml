@@ -30,7 +30,8 @@ dependencies:
     
 test:
   override:
-    - docker run -t $CONTAINER bash -c 'env | grep rbenv'
+    - docker run -t $CONTAINER bash -c 'env'
+
     
 
     
