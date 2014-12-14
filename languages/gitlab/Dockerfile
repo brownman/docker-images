@@ -1,13 +1,13 @@
 FROM        brownman/ruby-2.1.0
 
 #ubuntu:14.10
-MAINTAINER  pgolm "golm.peter@gmail.com"
+MAINTAINER  brownman "brownman2556@gmail.com"
 # pgolm/docker-gitlab-ci-runner
 
-ENV DEBIAN_FRONTEND noninteractive
+#ENV DEBIAN_FRONTEND noninteractive
 #ENV USER1 gitlab_ci_runner
 # Config
-ENV 		INSTALL_RUBY_VERSION 2.1.0
+#ENV 		INSTALL_RUBY_VERSION 2.1.0
 #ENV 		INSTALL_RUBY_VERSION 1.9.3
 
 # apt-get deps
