@@ -1,6 +1,6 @@
 FROM        brownman/ruby-2.1.0
 MAINTAINER  brownman "brownman2556@gmail.com"
-WORKDIR 	$HOME
+#WORKDIR 	$HOME
 RUN      git clone https://github.com/gitlabhq/gitlab-ci-runner.git runner
 # Jan 02, 2014
 ENV 		RUNNER_REVISION 08f2260ae87e101f72194a27229b249d126e35fe
