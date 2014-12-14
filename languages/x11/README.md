@@ -28,3 +28,4 @@ USER@83f1afe646d9:/$ ps x
    10 ?        R+     0:00 ps x
 
 ```
+[link](http://catch-0x16.blogspot.co.il/2014/09/docker-with-x-forwarding.html)
