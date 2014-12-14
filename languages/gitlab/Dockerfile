@@ -27,10 +27,10 @@ ENV 		INSTALL_RUBY_VERSION 2.1.0
 #RUN 		add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) main universe restricted multiverse"
 
 # switch priveleges
-USER root
-RUN 		adduser --disabled-login --gecos 'GitLab CI Runner' gitlab_ci_runner
-USER		gitlab_ci_runner
-ENV 		HOME /home/gitlab_ci_runner
+#USER root
+#RUN 		adduser --disabled-login --gecos 'GitLab CI Runner' gitlab_ci_runner
+#USER		gitlab_ci_runner
+#ENV 		HOME /home/gitlab_ci_runner
 
 # install ruby, bundler
 #RUN 		wget -qO - https://raw.github.com/fesplugas/rbenv-installer/master/bin/rbenv-installer | bash
