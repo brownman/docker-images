@@ -14,7 +14,7 @@ dependencies:
   override:
     - docker info
     #load
-    - if [[ -e $file_cache ]]; then docker load -i file_cache; fi
+    - if [[ -e $file_cache ]]; then docker load -i file_cache;else echo cache not found.. creating image; fi
     #build
  #   - docker build -t $CONTAINER .
     - docker build -t $CONTAINER - < $container_path
