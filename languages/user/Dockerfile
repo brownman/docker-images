@@ -1,14 +1,10 @@
 FROM ubuntu:precise
-
 ENV USER1 gitlab_ci_runner
-
-RUN apt-get install sudo
-
-
 RUN 		adduser --disabled-login --gecos 'GitLab CI Runner' gitlab_ci_runner		
 USER		gitlab_ci_runner		
 ENV 		HOME /home/$USER1
 
+#RUN apt-get install sudo
 
 #  mkdir -p $HOME && \
 # ADD $USER1 User
