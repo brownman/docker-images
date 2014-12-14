@@ -1,21 +1,36 @@
 machine:
   services:
     - docker
-  environment:
-    CONTAINER: 'brownman/docker_rootless'
+  environment:   
     timeout: 600
+    container_alias: rbenv
+    CONTAINER: brownman/rbenv
     container_path: ./languages/ruby
-    container_name: brownman/rbenv
+    dir_cache: ~/docker
+    file_cache: $dir_cache/${container_alias}.tar
 
 dependencies:
   override:
     - docker info
-    - docker build -t $container_name $container_path
+    - docker build -t $CONTAINER - < $container_path
     
+  override:
+    #load
+    - if [[ -e file_cache ]]; then docker load -i file_cache; fi
+    #build
+    - docker build -t $CONTAINER .
+    #save
+    - mkdir -p $dir_cache; docker save $CONTAINER > $file_cache
+    #info
+    - docker info
+
   cache_directories:
     - "~/docker"
     
 test:
   override:
-    - docker run -t $container_name $container_path bash -c 'env | grep rbenv'
+    - docker run -t $CONTAINER bash -c 'env | grep rbenv'
     
+
+    
+  
