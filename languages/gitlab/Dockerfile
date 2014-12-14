@@ -43,8 +43,8 @@ MAINTAINER  brownman "brownman2556@gmail.com"
 #RUN         . $HOME/.profile && gem install bundler
 
 # install gitlab-ci-runner
-USER $USER1
-ENV HOME /home/$USER1
+#USER $USER1
+#ENV HOME /home/$USER1
 WORKDIR 	$HOME
 
 
