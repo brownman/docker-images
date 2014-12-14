@@ -5,7 +5,7 @@ MAINTAINER  pgolm "golm.peter@gmail.com"
 # pgolm/docker-gitlab-ci-runner
 
 ENV DEBIAN_FRONTEND noninteractive
-
+#ENV USER1 gitlab_ci_runner
 # Config
 ENV 		INSTALL_RUBY_VERSION 2.1.0
 #ENV 		INSTALL_RUBY_VERSION 1.9.3
@@ -44,7 +44,9 @@ ENV 		INSTALL_RUBY_VERSION 2.1.0
 
 # install gitlab-ci-runner
 
-WORKDIR 	/home/gitlab_ci_runner
+WORKDIR 	/home/$USER1
+HOME /home/$USER1
+
 RUN         git clone https://github.com/gitlabhq/gitlab-ci-runner.git runner
 # Jan 02, 2014
 ENV 		RUNNER_REVISION 08f2260ae87e101f72194a27229b249d126e35fe
