@@ -1,4 +1,4 @@
-FROM brownman/apt
+FROM ubuntu:precise
 #  mkdir -p $HOME && \
 # ADD $USER1 User
 ENV HOME /home
