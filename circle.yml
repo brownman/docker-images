@@ -4,7 +4,7 @@ machine:
     
   environment:   
     timeout: 600
-    alias: gitlab
+    alias: user
     CONTAINER:       brownman/$alias
     container_path:  ./languages/$alias
     file_test:  ./languages/$alias/test.sh
