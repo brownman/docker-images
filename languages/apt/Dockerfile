@@ -1,4 +1,4 @@
-FROM ubuntu:precise
+FROM brownman/user
 MAINTAINER ofer brown <brownman2556@gmail.com>
 # Add apt repository needed
 RUN echo 'deb http://archive.ubuntu.com/ubuntu precise main universe' > /etc/apt/sources.list  && \
