@@ -2,7 +2,7 @@ FROM ubuntu:precise
 MAINTAINER Joel Wurtz <jwurtz@jolicode.com>
 
 ENV HOME /home
-
+ENV USER1 gitlab_ci_runner
 # Add apt repository needed
 RUN echo 'deb http://archive.ubuntu.com/ubuntu precise main universe' > /etc/apt/sources.list  && \
     echo 'deb http://archive.ubuntu.com/ubuntu precise-security main universe' >> /etc/apt/sources.list && \
@@ -18,11 +18,11 @@ RUN echo 'deb http://archive.ubuntu.com/ubuntu precise main universe' > /etc/apt
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-# ADD Travis User
-RUN addgroup --gid=1000 travis && \
-    adduser --system --uid=1000 --home /home --shell /bin/bash travis && \
-    echo "travis ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers && \
-    chown -R travis:travis /home && \
-    chown -R travis:travis /usr/local
+# ADD $USER1 User
+RUN addgroup --gid=1000 $USER1 && \
+    adduser --system --uid=1000 --home /home --shell /bin/bash $USER1 && \
+    echo "$USER1 ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers && \
+    chown -R $USER1:$USER1 /home && \
+    chown -R $USER1:$USER1 /usr/local
 
-USER travis
+USER $USER1
