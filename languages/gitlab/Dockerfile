@@ -43,9 +43,10 @@ MAINTAINER  brownman "brownman2556@gmail.com"
 #RUN         . $HOME/.profile && gem install bundler
 
 # install gitlab-ci-runner
+USER $USER1
+ENV HOME /home/$USER1
+WORKDIR 	$HOME
 
-WORKDIR 	/home/$USER1
-HOME /home/$USER1
 
 RUN         git clone https://github.com/gitlabhq/gitlab-ci-runner.git runner
 # Jan 02, 2014
