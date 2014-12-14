@@ -1,3 +1,5 @@
+```bash
+
 On my Docker Talk at the Kassel Code Meetup #3 one question was how to do graphic with Docker.
 I check the X11 side of it. The goal is to work with graphical programs running inside the docker container without running additional services (e.g. sshd)
 
@@ -23,7 +25,6 @@ Then I generated the image with
 
 docker build -t ubuntu-x11 .
 
-```bash
 To "simplify" (not having to edit the Dockerfile for other users) you can comment out the adduser line in the Dockerfile and run
 
 (cat Dockerfile ; echo "RUN adduser $LOGNAME") \
