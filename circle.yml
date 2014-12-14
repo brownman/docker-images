@@ -8,7 +8,7 @@ machine:
     CONTAINER:       brownman/$alias
     container_path:  ./languages/$alias
     dir_cache:       ~/docker
-    file_cache:      $dir_cache/${container_alias}.tar
+    file_cache:      $dir_cache/${alias}.tar
 
 dependencies:
   override:
@@ -17,7 +17,7 @@ dependencies:
     
   override:
     #load
-    - if [[ -e file_cache ]]; then docker load -i file_cache; fi
+    - if [[ -e $file_cache ]]; then docker load -i file_cache; fi
     #build
     - docker build -t $CONTAINER .
     #save
