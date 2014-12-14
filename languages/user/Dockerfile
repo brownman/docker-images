@@ -1,4 +1,4 @@
-
+FROM brownman/apt
 #  mkdir -p $HOME && \
 # ADD $USER1 User
 ENV USER1 gitlab_ci_runner
