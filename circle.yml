@@ -13,12 +13,12 @@ machine:
 dependencies:
   override:
     - docker info
-    #load
-    - if [[ -e $file_cache ]]; then docker load -i file_cache;else echo cache not found.. creating image; fi
+    - docker images | wc -l
+    #load layers
+    - if [[ -e $file_cache ]]; then docker load -i $file_cache; fi
     #build
- #   - docker build -t $CONTAINER .
     - docker build -t $CONTAINER - < $container_path
-    #save
+    #save layers
     - mkdir -p $dir_cache; docker save $CONTAINER > $file_cache
     #info
     - docker info
@@ -28,6 +28,8 @@ dependencies:
     
 test:
   override:
+    - docker images | wc -l
+    #docker diffs - show it!
     - docker run -t $CONTAINER /bin/bash -c 'echo hi'
 
     
