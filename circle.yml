@@ -25,7 +25,8 @@ dependencies:
     
 test:
   override:
-    - docker run -t $CONTAINER bash -c - < $file_test
+    - docker run -i -t $CONTAINER bash -c < $file_test
+    #- cat $file_test | $same
 
     
 
