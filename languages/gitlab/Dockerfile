@@ -24,6 +24,7 @@ CMD 	  cd $HOME/runner
 #USER $USER1
 #ENV HOME /home/$USER1
 
-
+CMD   source $HOME/.bashrc
 CMD 	cd $HOME/runner
-CMD 		. ../.profile && ssh-keyscan -H $GITLAB_SERVER_FQDN >> $HOME/.ssh/known_hosts && bundle exec ./bin/setup_and_run || ( echo 1>&2 ERR: \$GITLAB_SERVER_FQDN not exist  )
+#. ../.profile && 
+CMD 	ssh-keyscan -H $GITLAB_SERVER_FQDN >> $HOME/.ssh/known_hosts && bundle exec ./bin/setup_and_run || ( echo 1>&2 ERR: \$GITLAB_SERVER_FQDN not exist  )
