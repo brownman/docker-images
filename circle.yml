@@ -21,7 +21,7 @@ dependencies:
     - docker info
 
   cache_directories:
-    - "~/docker"
+    - $dir_cache
     
 test:
   override:
