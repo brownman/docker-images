@@ -1,6 +1,6 @@
 FROM brownman/nvm
 
-ONBUILD env
-ONBUILD history
-ONBUILD apt-get install toilet
-ONBUILD toilet --gay here u go
+ONBUILD RUN env
+ONBUILD RUN history
+ONBUILD RUN apt-get install toilet
+ONBUILD RUN toilet --gay here u go
