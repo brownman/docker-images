@@ -24,7 +24,7 @@ RUN         service sudo restart
 RUN 		adduser --disabled-login --gecos 'GitLab CI Runner' gitlab_ci_runner
 USER		gitlab_ci_runner
 ENV 		HOME /home/gitlab_ci_runner
-RUN         echo gitlab_ci_runner:gitlab_ci_runner | chpasswd
+#RUN         echo gitlab_ci_runner:gitlab_ci_runner | chpasswd
 # install ruby, bundler
 #RUN 		wget -qO - https://raw.github.com/fesplugas/rbenv-installer/master/bin/rbenv-installer | bash
 #ENV 		RBENV_ROOT ${HOME}/.rbenv
