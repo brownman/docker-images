@@ -12,6 +12,8 @@ machine:
     file_cache:      $dir_cache/${alias}.tar
 
 dependencies:
+  cache_directories:
+    - $dir_cache
   override:
     - docker images | wc -l
     - if [[ -e $file_cache ]]; then docker load -i $file_cache; fi
@@ -20,8 +22,6 @@ dependencies:
     - docker images | wc -l
     - docker info
 
-  cache_directories:
-    - $dir_cache
     
 test:
   override:
