@@ -18,4 +18,5 @@ steps:
 
 target
 ---
+- https://github.com/pgolm/docker-gitlab-ci-runner/blob/master/Dockerfile
 - https://github.com/gitlabhq/gitlab-ci-runner/blob/master/Dockerfile
