@@ -1,5 +1,7 @@
 #FROM brownman/user
-FROM ubuntu:precise
+#FROM ubuntu:precise
+FROM ubuntu:12.10
+
 MAINTAINER ofer brown <brownman2556@gmail.com>
 # Add apt repository needed
 #USER root
