@@ -6,6 +6,13 @@ admin priv
 - add user to group:docker :
 - [link](http://www.snip2code.com/Snippet/198806/Add-user-to-docker-group-to-avoid-sudo)
 
+
+sudoers
+---
+- http://askubuntu.com/questions/192050/how-to-run-sudo-command-with-no-password/443071#443071
+
+using docker service
+------
 ```bash
 sudo groupadd docker
 sudo gpasswd -a ${USER} docker
