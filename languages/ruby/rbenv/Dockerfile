@@ -1,4 +1,4 @@
-FROM brownman/apt
+FROM brownman/user
 MAINTAINER Joel Wurtz <jwurtz@jolicode.com>
 
 ENV PATH $HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH
