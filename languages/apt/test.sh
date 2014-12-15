@@ -1,2 +1,5 @@
 dpkg-query -W -f='${Status} ${Version}\n' sudo
-git 1>/dev/null
+dpkg-query -W -f='${Status} ${Version}\n' git-core
+git 
+which git
+whereis git
