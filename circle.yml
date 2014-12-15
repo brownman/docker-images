@@ -5,7 +5,8 @@ machine:
   environment:   
     timeout: 600
     alias: apt
-    prefix: ruby
+    prefix: 
+    #
     CONTAINER:       brownman/$alias
     container_path:  ./languages/$prefix/$alias
     file_test:       $container_path/test.sh
