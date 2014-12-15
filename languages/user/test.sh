@@ -1,2 +1,2 @@
 pwd
-test $(pwd) = '/home/gitlab_ci_runner'
+test $(pwd) = '/home/gitlab_ci_runner2'
