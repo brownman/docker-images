@@ -6,10 +6,10 @@ RUN      git clone --depth=1 https://github.com/gitlabhq/gitlab-ci-runner.git ru
 # Jan 02, 2014
 #ENV 		RUNNER_REVISION 08f2260ae87e101f72194a27229b249d126e35fe
 #RUN     cd runner && git checkout $RUNNER_REVISION && bundle install
-RUN     cd runner && bundle install 
+RUN   . $HOME/.profile &&   cd runner && bundle install 
 
 
-#&& . $HOME/.profile && 
+#&& 
 
 RUN     mkdir -p $HOME/.ssh
 CMD 	  cd $HOME/runner
