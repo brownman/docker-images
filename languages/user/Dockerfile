@@ -5,6 +5,7 @@ FROM        brownman/apt
 MAINTAINER  pgolm "golm.peter@gmail.com"
 
 RUN         echo "gitlab_ci_runner ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+RUN         echo gitlab_ci_runner:gitlab_ci_runner | chpasswd
 RUN         service sudo restart
 
 # Config
@@ -39,7 +40,6 @@ WORKDIR 	/home/gitlab_ci_runner
 
 # prepare SSH
 RUN         mkdir -p $HOME/.ssh
-RUN         echo $USER1:$USER1 | chpasswd
 
 
 #RUN         git clone --depth=1 https://github.com/gitlabhq/gitlab-ci-runner.git runner
