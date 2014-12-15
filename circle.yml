@@ -4,7 +4,7 @@ machine:
     
   environment:   
     timeout: 600
-    alias: user
+    alias: apt
     CONTAINER:       brownman/$alias
     container_path:  ./languages/$alias
     file_test:  ./languages/$alias/test.sh
@@ -21,7 +21,6 @@ dependencies:
     - mkdir -p $dir_cache; docker save $CONTAINER > $file_cache
     - docker images | wc -l
     - docker info
-
     
 test:
   override:
