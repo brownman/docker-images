@@ -1,4 +1,4 @@
 env
 which bundler
-whereis bundler
+ls /home/gitlab_ci_runner/.rbenv/shims | grep httparty
 which httparty
