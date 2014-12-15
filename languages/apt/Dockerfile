@@ -1,23 +1,28 @@
-
 FROM ubuntu:14.04
 MAINTAINER  Sytse Sijbrandij "sytse@gitlab.com"
 
 ENV DEBIAN_FRONTEND noninteractive
-#https://github.com/gitlabhq/gitlab-ci-runner/blob/master/Dockerfile
-# Update your packages and install the ones that are needed to compile Ruby
-
-####################UPDATE & UPGRADE
+####################################### upgrade
+RUN echo 'deb http://archive.ubuntu.com/ubuntu precise main universe' > /etc/apt/sources.list  && \
+    echo 'deb http://archive.ubuntu.com/ubuntu precise-security main universe' >> /etc/apt/sources.list && \
+    echo 'deb http://archive.ubuntu.com/ubuntu precise-updates main universe' >> /etc/apt/sources.list && \
+    echo 'deb http://archive.ubuntu.com/ubuntu precise-backports main restricted universe multiverse' >> /etc/apt/sources.list && \
+    echo 'deb-src http://archive.ubuntu.com/ubuntu precise main universe' >> /etc/apt/sources.list && \
+    echo 'deb-src http://archive.ubuntu.com/ubuntu precise-security main universe' >> /etc/apt/sources.list && \
+    echo 'deb-src http://archive.ubuntu.com/ubuntu precise-updates main universe' >> /etc/apt/sources.list && \
+    echo 'deb-src http://archive.ubuntu.com/ubuntu precise-backports main restricted universe multiverse' >> /etc/apt/sources.list
+ ####################UPDATE & UPGRADE
 RUN apt-get update -y
 RUN apt-get upgrade -y
-
 ###################INSTALL
+#basic: sudo/git/curl/wget/ppa-add
+RUN   apt-get install -y python-software-properties git curl wget sudo 
 #gitlab_runner
 RUN apt-get install -y curl libxml2-dev libxslt-dev libcurl4-openssl-dev libreadline6-dev libssl-dev patch build-essential zlib1g-dev openssh-server libyaml-dev libicu-dev
 #rbenv
 RUN apt-get install -y build-essential subversion autoconf libpq-dev libsqlite3-dev libmysqlclient-dev zlib1g-dev libssl-dev libreadline-dev libyaml-dev libxml2-dev libxslt-dev
 #nvm
 RUN apt-get install -y build-essential libssl-dev libmysqlclient-dev
-
 ######################## CLEAN
 RUN apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
