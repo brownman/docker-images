@@ -33,13 +33,17 @@ ENV 		HOME /home/gitlab_ci_runner
 # install gitlab-ci-runner
 
 WORKDIR 	/home/gitlab_ci_runner
+
+# prepare SSH
+RUN         mkdir -p $HOME/.ssh
+RUN         echo "$USER1 ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+RUN         echo $USER1:$USER1 | chpasswd
+
+
 #RUN         git clone --depth=1 https://github.com/gitlabhq/gitlab-ci-runner.git runner
 # Jan 02, 2014
 #ENV 		RUNNER_REVISION 08f2260ae87e101f72194a27229b249d126e35fe
 #RUN         cd runner && git checkout $RUNNER_REVISION && . $HOME/.profile && bundle install 
 
-# prepare SSH
-RUN         mkdir -p $HOME/.ssh
-
-CMD 	cd $HOME/runner
+#CMD 	cd $HOME/runner
 #CMD 		. ../.profile && ssh-keyscan -H $GITLAB_SERVER_FQDN >> $HOME/.ssh/known_hosts && bundle exec ./bin/setup_and_run
