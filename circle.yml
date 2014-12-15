@@ -4,8 +4,8 @@ machine:
     
   environment:   
     timeout: 600
-    alias: user
-    prefix: 
+    alias: rbenv
+    prefix: ruby
     #
     CONTAINER:       brownman/$alias
     container_path:  ./languages/$prefix/$alias
