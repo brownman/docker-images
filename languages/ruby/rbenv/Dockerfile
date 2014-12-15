@@ -5,10 +5,10 @@ ENV PATH $HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH
 ENV CONFIGURE_OPTS --disable-install-doc
 
 # Install deps
-#RUN sudo apt-get update && \
-#    sudo apt-get install -y build-essential subversion autoconf libpq-dev libsqlite3-dev libmysqlclient-dev zlib1g-dev libssl-dev libreadline-dev libyaml-dev libxml2-dev libxslt-dev && \
-#    sudo apt-get clean && \
-#    sudo rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+RUN sudo apt-get update && \
+    sudo apt-get install -y build-essential subversion autoconf libpq-dev libsqlite3-dev libmysqlclient-dev zlib1g-dev libssl-dev libreadline-dev libyaml-dev libxml2-dev libxslt-dev && \
+    sudo apt-get clean && \
+    sudo rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Install rbenv and ruby-build
 RUN git clone --depth=1 https://github.com/sstephenson/rbenv.git      $HOME/.rbenv && \
