@@ -13,7 +13,7 @@ ENV DEBIAN_FRONTEND noninteractive
 #    echo 'deb-src http://archive.ubuntu.com/ubuntu precise-backports main restricted universe multiverse' >> /etc/apt/sources.list
  ####################UPDATE & UPGRADE
 RUN apt-get update -y
-RUN apt-get upgrade -y
+#RUN apt-get upgrade -y
 ###################INSTALL
 #basic: sudo/git/curl/wget/ppa-add
 #RUN   apt-get install -y python-software-properties curl wget sudo git-core
