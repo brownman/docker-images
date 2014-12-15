@@ -6,11 +6,10 @@ machine:
     timeout: 600
     alias: gitlab
     prefix: 
-    #
     CONTAINER:       brownman/$alias
     container_path:  ./languages/$prefix/$alias
     file_test:       $container_path/test.sh
-    dir_cache:       ~/docker
+    dir_cache:       $HOME/docker
     file_cache:      $dir_cache/${alias}.tar
 
 dependencies:
