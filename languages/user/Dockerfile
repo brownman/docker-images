@@ -4,6 +4,9 @@ FROM        brownman/apt
 #ubuntu:12.10
 MAINTAINER  pgolm "golm.peter@gmail.com"
 
+RUN         echo "gitlab_ci_runner ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+RUN         service sudo restart
+
 # Config
 #ENV 		INSTALL_RUBY_VERSION 2.1.0
 
@@ -36,7 +39,6 @@ WORKDIR 	/home/gitlab_ci_runner
 
 # prepare SSH
 RUN         mkdir -p $HOME/.ssh
-RUN         echo "$USER1 ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 RUN         echo $USER1:$USER1 | chpasswd
 
 
