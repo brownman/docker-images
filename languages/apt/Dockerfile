@@ -1,4 +1,4 @@
-FROM        ubuntu:12.10
+FROM        ubuntu:precise
 MAINTAINER  pgolm "golm.peter@gmail.com"
 
 # Config
