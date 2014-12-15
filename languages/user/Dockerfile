@@ -1,6 +1,7 @@
 # pgolm/docker-gitlab-ci-runner
 
-FROM        ubuntu:12.10
+FROM        brownman/apt
+#ubuntu:12.10
 MAINTAINER  pgolm "golm.peter@gmail.com"
 
 # Config
