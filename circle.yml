@@ -16,13 +16,11 @@ dependencies:
   cache_directories:
     - $dir_cache
   override:
-    - mkdir -p $dir_cache
-    - ls $dir_cache
     - docker images | wc -l
     - if [[ -e $file_cache ]]; then docker load -i $file_cache; echo using cache;else echo no cache; fi
     - docker build -t $CONTAINER $container_path:
         timeout: 600
-    - docker save $CONTAINER > $file_cache
+    - mkdir -p $dir_cache && docker save $CONTAINER > $file_cache
     - docker images | wc -l
     - docker info
     
