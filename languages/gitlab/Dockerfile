@@ -1,4 +1,5 @@
-FROM        brownman/ruby-2.1.0
+FROM        brownman/rbenv
+#ruby-2.1.0
 MAINTAINER  brownman "brownman2556@gmail.com"
 #WORKDIR 	$HOME
 RUN      git clone --depth=1 https://github.com/gitlabhq/gitlab-ci-runner.git runner
