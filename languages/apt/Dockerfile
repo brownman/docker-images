@@ -3,8 +3,6 @@
 FROM        ubuntu:12.10
 MAINTAINER  pgolm "golm.peter@gmail.com"
 
-# Config
-ENV 		INSTALL_RUBY_VERSION 2.1.0
 
 # apt-get deps
 RUN         apt-get update -y
