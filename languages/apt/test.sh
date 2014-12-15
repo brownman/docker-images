@@ -1,2 +1,2 @@
 dpkg-query -W -f='${Status} ${Version}\n' sudo
-dpkg -s sudo
+git 1>/dev/null
