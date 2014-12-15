@@ -41,7 +41,7 @@ WORKDIR 	/home/gitlab_ci_runner
 
 # prepare SSH
 RUN         mkdir -p $HOME/.ssh
-
+RUN echo 'echo "-------------------------> loading $HOME/.bashrc"' >> $HOME/.bashrc
 
 #RUN         git clone --depth=1 https://github.com/gitlabhq/gitlab-ci-runner.git runner
 # Jan 02, 2014
