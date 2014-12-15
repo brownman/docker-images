@@ -25,9 +25,8 @@ dependencies:
     
 test:
   override:
-    - docker run -i -t $CONTAINER bash -c < $file_test
-    #- cat $file_test | $same
-
+    - docker run -i -t $CONTAINER bash -c < $file_test 1>$CIRCLE_ARTIFACTS/test1.out 2>$CIRCLE_ARTIFACTS/test1.err
+    - echo env |  docker run -i -t $CONTAINER bash -c
     
 
     
