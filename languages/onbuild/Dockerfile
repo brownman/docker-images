@@ -6,5 +6,5 @@ ADD . $HOME
 RUN chmod +x $HOME/mean.sh && $HOME/mean.sh 
 #ONBUILD RUN env
 #ONBUILD RUN history
-ONBUILD RUN apt-get install toilet
-ONBUILD RUN toilet --gay 'mean.io'
+#ONBUILD RUN apt-get install toilet
+#ONBUILD RUN toilet --gay 'mean.io'
