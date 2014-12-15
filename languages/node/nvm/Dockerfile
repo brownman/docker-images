@@ -4,7 +4,7 @@ MAINTAINER Joel Wurtz <jwurtz@jolicode.com>
 
 
 RUN sudo apt-get update && \
-    sudo apt-get install -y build-essential libssl-dev libmysqlclient-dev && \
+    sudo apt-get install -y build-essential curl libssl-dev libmysqlclient-dev && \
     sudo apt-get clean && \
     sudo rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
