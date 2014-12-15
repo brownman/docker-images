@@ -14,3 +14,8 @@ steps:
 
 - 2>>
 - rbenv should be available on login
+
+
+target
+---
+- https://github.com/gitlabhq/gitlab-ci-runner/blob/master/Dockerfile
