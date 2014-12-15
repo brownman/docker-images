@@ -1,7 +1,7 @@
 FROM brownman/user
 MAINTAINER ofer brown <brownman2556@gmail.com>
 # Add apt repository needed
-USER root
+#USER root
 RUN echo 'deb http://archive.ubuntu.com/ubuntu precise main universe' > /etc/apt/sources.list  && \
     echo 'deb http://archive.ubuntu.com/ubuntu precise-security main universe' >> /etc/apt/sources.list && \
     echo 'deb http://archive.ubuntu.com/ubuntu precise-updates main universe' >> /etc/apt/sources.list && \
