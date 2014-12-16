@@ -10,4 +10,10 @@ wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.20.0/install.sh | 
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" && nvm alias default 0.10.33
 
 # Install brunch
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" && npm install -g bower
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" && npm install -g bower grunt grunt-cli mean-cli
+
+echo -e '\n' | mean init myApp
+cd myApp
+npm install -g
+npm link
+grunt test
