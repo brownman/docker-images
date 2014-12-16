@@ -15,10 +15,10 @@ machine:
 dependencies:
   override:
     - docker images | wc -l
-    - if [[ -e $file_cache ]]; then echo using cache; docker load -i $file_cache; else echo no cache; fi
+    #- if [[ -e $file_cache ]]; then echo using cache; docker load -i $file_cache; else echo no cache; fi
     - docker build -t $CONTAINER $container_path:
         timeout: 600
-    - mkdir -p $dir_cache; docker save $CONTAINER > $file_cache
+    #- mkdir -p $dir_cache; docker save $CONTAINER > $file_cache
     - docker images | wc -l
     - docker info
   cache_directories:
