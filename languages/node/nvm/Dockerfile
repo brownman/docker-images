@@ -1,5 +1,5 @@
 # Install nvm
-brownman/gitlab
+FROM brownman/gitlab
 
 # Run dockerbase script
 
