@@ -1,6 +1,8 @@
 node -v
 npm -v
-which bower
+bower
+cd myApp; grunt test
+
 
 #npm install -g bower && which bower
 
