@@ -18,7 +18,8 @@ ENV PATH $HOME/.nvm/bin:$PATH
 ENV NODE_VERSION 0.10
 RUN /bin/bash -l -c "nvm install $NODE_VERSION && nvm use $NODE_VERSION && rm -rf $HOME/.nvm/bin && ln -s \$NVM_BIN $HOME/.nvm/bin"
 
-RUN npm install -g npm@2
+RUN npm install -g npm
+#@2
 RUN npm update -g npm
 RUN npm install -g grunt-cli 
 RUN npm install -g bower 
