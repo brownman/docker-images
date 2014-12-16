@@ -19,7 +19,8 @@ commander(){
 }
 
 step1(){
-  commander npm update -g npm
+ commander npm install -g npm@2
+commander npm update -g npm
 }
 
 step2(){
@@ -42,7 +43,7 @@ commander npm link
 steps(){
 step1
 step2
-#step3
+step3
 }
 
 steps
