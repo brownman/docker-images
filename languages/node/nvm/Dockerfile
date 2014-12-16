@@ -1,5 +1,6 @@
 # Install nvm
-FROM brownman/gitlab
+FROM ubuntu
+#brownman/gitlab
 
 # Run dockerbase script
 ADD     nvm.sh $HOME
