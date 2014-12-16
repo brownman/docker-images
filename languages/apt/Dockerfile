@@ -8,4 +8,5 @@ MAINTAINER  pgolm "golm.peter@gmail.com"
 RUN         apt-get update -y
 RUN         apt-get install -y -q curl sudo wget git build-essential libicu-dev \ 
  lsb-release software-properties-common tklib zlib1g-dev libssl-dev \
- libreadline-gplv2-dev libxml2 libxml2-dev libxslt1-dev
+ libreadline-gplv2-dev libxml2 libxml2-dev libxslt1-dev \
+ net-tools
