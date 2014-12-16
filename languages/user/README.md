@@ -27,3 +27,5 @@ sudo {service,systemctl} docker restart
 
 - [parent](https://github.com/brownman/docker-images/commit/6469087c907cbc5f0afe0d3e08a08f77a15137a5)
 - [orig](https://github.com/pgolm/docker-gitlab-ci-runner)
+
+- [default user](https://github.com/dockerbase/devbase-nvm/blob/master/devbase-nvm.sh)
