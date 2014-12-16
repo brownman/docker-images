@@ -1,5 +1,9 @@
 node -v
 npm -v
+nvm --version
+npm install -g bower && which bower
+
+
 grunt-cli
 ls -l `npm root -g`
 which node
