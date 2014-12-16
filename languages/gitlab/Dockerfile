@@ -11,5 +11,5 @@ RUN     mkdir -p $HOME/.ssh
 
 
 
-CMD   source $HOME/.bashrc
+CMD   . $HOME/.bashrc
 CMD 	ssh-keyscan -H $GITLAB_SERVER_FQDN >> $HOME/.ssh/known_hosts && ( bundle exec $dir_runner/bin/setup_and_run ) || ( echo 1>&2 ERR;  )
