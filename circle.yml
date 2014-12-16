@@ -21,8 +21,8 @@ dependencies:
     #- mkdir -p $dir_cache; docker save $CONTAINER > $file_cache
     - docker images | wc -l
     - docker info
-  cache_directories:
-    - $dir_cache
+ # cache_directories:
+#    - $dir_cache
     
 test:
   override:
