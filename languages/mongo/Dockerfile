@@ -1,4 +1,4 @@
-FROM brownman/nvm
+FROM brownman/gitlab
 
 ADD . $HOME
 CMD   source $HOME/.bashrc
