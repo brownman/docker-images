@@ -20,15 +20,17 @@ commander(){
 
 step1(){
   commander npm update -g npm
-  commander npm install -g grunt-cli 
 }
 
 step2(){
- #  cat /tmp/2.sh  | grep -i err | wc -l
+commander npm install -g grunt-cli 
 commander npm install -g bower 
 commander npm install -g mean-cli
-echo $HOME
-cd $HOME 
+}
+
+step3(){
+#echo $HOME
+#cd $HOME 
 echo -e '\n' | mean init myApp 
 cd myApp 
 commander npm -g install
@@ -36,16 +38,11 @@ commander npm link
 #( grunt test ) || ( echo never mind the test - try again later! )
 }
 
-step3(){
-  apt-get update -y 
-  apt-get upgrade -y
-
-  apt-get install -y --force-yes locate
-  updatedb
-  locate grunt-cli
-}
-
  
-
+steps(){
 step1
 step2
+#step3
+}
+
+steps
