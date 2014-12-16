@@ -1,5 +1,6 @@
 node -v
 npm -v
+grunt-cli
 ls -l `npm root -g`
 which node
 which npm
