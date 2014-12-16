@@ -1,6 +1,6 @@
 # Install nvm
-USER=$USER
-HOME=/home/$USER
+#USER=$USER
+#HOME=/home/$USER
 NVM_DIR=$HOME/.nvm
 curl https://raw.githubusercontent.com/creationix/nvm/v0.18.0/install.sh | bash
 
