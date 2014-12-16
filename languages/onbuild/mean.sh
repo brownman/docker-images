@@ -32,7 +32,7 @@ commander npm install -g mean-cli
 step3(){
 #echo $HOME
 #cd $HOME 
-echo -e '\n' | mean init myApp 
+echo -e '\n' | mean-cli init myApp 
 cd myApp 
 commander npm -g install
 commander npm link 
@@ -41,8 +41,8 @@ commander npm link
 
  
 steps(){
-step1
-step2
+#step1
+#step2
 step3
 }
 
