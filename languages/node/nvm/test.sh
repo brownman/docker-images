@@ -1,6 +1,6 @@
 node -v
 npm -v
+ls -l `npm root -g`
 which node
 which npm
-ls -l `npm root -g`
-mean
+which mean-cli
