@@ -1,5 +1,1 @@
-sudo service mongo status
-sudo service mongo restart
-sudo service mongo status
-mongod 
-netstat -ntlp
+mongod --fork -f /etc/mongodb.conf && sleep 1 && netstat -ntlp
