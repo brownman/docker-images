@@ -1,5 +1,5 @@
 # Install nvm
-FROM brownman/user
+FROM brownman/bashrc
 
 #FROM brownman/gitlab
 
