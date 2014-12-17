@@ -9,3 +9,8 @@ localhost
 supervisor
 ---
 - https://docs.docker.com/articles/using_supervisord/
+
+
+mean err
+----
+- https://github.com/meanjs/mean/issues/142
