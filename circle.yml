@@ -29,6 +29,7 @@ dependencies:
 test:
   override:
    # - docker run --name some-mongo -d mongo && 
+    - docker run -i brownman/user bash -c 'ls $HOME'
     - docker run -i brownman/apt bash -c 'ls $HOME'
     - docker run -i brownman/mongo bash -c 'ls $HOME'
     - docker run -i brownman/nvm bash -c 'ls $HOME'
