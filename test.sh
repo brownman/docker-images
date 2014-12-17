@@ -23,8 +23,8 @@ sudo docker run -t -i --rm --link db:db brownman/nvm /bin/bash -c env
 }
 
 steps(){
-set_env
-run
+#set_env
+linking1
 }
 
 steps
