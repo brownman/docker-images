@@ -29,7 +29,7 @@ dependencies:
 test:
   override:
     - chmod +x ./test.sh && ./test.sh
-    - { docker run --name some-mongo -d mongo; } && { docker run -i $CONTAINER bash < $file_test; }
+    - docker run --name some-mongo -d mongo &&  docker run -i $CONTAINER bash < $file_test;
     
 
     #1>$CIRCLE_ARTIFACTS/test1.out.txt 2>$CIRCLE_ARTIFACTS/test1.err.txt
