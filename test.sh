@@ -10,10 +10,16 @@ set_env(){
 }
 
 
-
-
-run(){
-sudo docker run -d -P --name "$alias" -v "$vol_from":"$vol_to" "$CONTAINER_APP" "$cmd"
+volume1(){
+    sudo docker run -d -P --name "$alias" -v "$vol_from":"$vol_to" "$CONTAINER_APP" "$cmd"
+}
+linking1(){
+    sudo mkdir -p /data/db
+#docker run -v /data:/data --name mongodb -d mongo
+#sudo docker run -d --name db training/postgres
+sudo docker run -d --name db mongodb
+#sudo docker run -t -i --rm --link db:db training/webapp /bin/bash
+sudo docker run -t -i --rm --link db:db brownman/nvm /bin/bash -c env 
 }
 
 steps(){
