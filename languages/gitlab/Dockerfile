@@ -7,8 +7,9 @@ ENV      HOME /home/gitlab_ci_runner
 ENV      dir_runner "$HOME/runner"
 ADD  . $HOME
 
-
-RUN     git clone --depth=1 https://github.com/gitlabhq/gitlab-ci-runner.git "$dir_runner" 
+RUN mkdir $HOME/runner_not
+RUN     git clone --depth=1 https://github.com/gitlabhq/gitlab-ci-runner.git runner
+#"$dir_runner" 
 #RUN     . $HOME/.bashrc && 
 RUN     . $HOME/.profile && cd $dir_runner && bundle install 
 RUN     mkdir -p $HOME/.ssh
