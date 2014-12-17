@@ -11,7 +11,7 @@ CMD   source $HOME/.bashrc
 #ONBUILD RUN apt-get install toilet
 #ONBUILD RUN toilet --gay 'mean.io'
 #CMD netstat -ntpl | grep mongo
-ENTRYPOINT cd myApp && ls -l && grunt test
+ENTRYPOINT . ~/.bashrc && cd myApp && ls -l && grunt test
 
 #ONBUILD RUN cd myApp
 #ONBUILD RUN grunt test
