@@ -14,3 +14,4 @@ supervisor
 mean err
 ----
 - https://github.com/meanjs/mean/issues/142
+- https://github.com/alex-node/mean/commit/3590554d21a0adad9f67eb2f767b2becf611e6d7
