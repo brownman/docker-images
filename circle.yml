@@ -12,14 +12,14 @@ machine:
     dir_cache:       $HOME/docker
     file_cache:      $dir_cache/${alias}.tar
 
+    #- if [[ -e $file_cache ]]; then echo using cache; docker load -i $file_cache; else echo no cache; fi
+    #- docker build -t $CONTAINER $container_path:
+    #    timeout: 600
+    #- mkdir -p $dir_cache; docker save $CONTAINER > $file_cache
 dependencies:
   override:
     - docker images | wc -l
-    #- if [[ -e $file_cache ]]; then echo using cache; docker load -i $file_cache; else echo no cache; fi
-    - docker build -t $CONTAINER $container_path:
-        timeout: 600
-    #- mkdir -p $dir_cache; docker save $CONTAINER > $file_cache
-    - docker images | wc -l
+   # - docker images | wc -l
     - docker info
  # cache_directories:
 #    - $dir_cache
