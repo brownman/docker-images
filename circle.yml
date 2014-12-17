@@ -4,7 +4,7 @@ machine:
     
   environment:   
     timeout: 600
-    alias: mongo
+    alias: nvm
     prefix: 
     CONTAINER:       brownman/$alias
     container_path:  ./languages/$prefix/$alias
@@ -26,7 +26,10 @@ dependencies:
     
 test:
   override:
-    - docker run -i $CONTAINER bash < $file_test 
+    - ./test.sh
+    #- docker run -i $CONTAINER bash < $file_test 
+    #- docker run --name some-mongo -d mongo
+
     #1>$CIRCLE_ARTIFACTS/test1.out.txt 2>$CIRCLE_ARTIFACTS/test1.err.txt
    # - echo env |  docker run -i -t $CONTAINER bash -c
     
