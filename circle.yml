@@ -28,7 +28,6 @@ dependencies:
     
 test:
   override:
-   # - docker run --name some-mongo -d mongo && 
     - docker run -it brownman/user bash -c 'ls $HOME'
     - docker run -it brownman/apt bash -c 'ls $HOME'
     - docker run -it brownman/mongo bash -c 'ls $HOME'
@@ -37,16 +36,13 @@ test:
     - docker run -it brownman/gitlab bash -c 'ls $HOME'
     - docker run -it brownman/onbuild bash -c 'ls $HOME'
 
+# - docker run --name some-mongo -d mongo && 
+#   - docker run -i $CONTAINER bash -c 'ls $HOME'
+#< $file_test;
+#- chmod +x ./test_linking.sh && ./test_linking.sh
+#1>$CIRCLE_ARTIFACTS/test1.out.txt 2>$CIRCLE_ARTIFACTS/test1.err.txt
+# - echo env |  docker run -i -t $CONTAINER bash -c
 
- #   - docker run -i $CONTAINER bash -c 'ls $HOME'
-
-    #< $file_test;
-    #- chmod +x ./test_linking.sh && ./test_linking.sh
-    - 
-
-    #1>$CIRCLE_ARTIFACTS/test1.out.txt 2>$CIRCLE_ARTIFACTS/test1.err.txt
-   # - echo env |  docker run -i -t $CONTAINER bash -c
-    
 
     
   
