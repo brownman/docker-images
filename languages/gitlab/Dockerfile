@@ -5,11 +5,13 @@ MAINTAINER  brownman "brownman2556@gmail.com"
 ENV      dir_runner "$HOME/runner"
 
 
-RUN      git clone --depth=1 https://github.com/gitlabhq/gitlab-ci-runner.git $dir_runner
-RUN     . $HOME/.bashrc &&  cd $dir_runner && bundle install 
+RUN     git clone --depth=1 https://github.com/gitlabhq/gitlab-ci-runner.git $dir_runner
+#RUN     . $HOME/.bashrc && 
+RUN     cd $dir_runner && bundle install 
 RUN     mkdir -p $HOME/.ssh
 
 
-COPY ./cmd.sh $HOME
+ADD  ./cmd.sh $HOME
+RUN   sudo chmod +x $HOME/cmd.sh
 #CMD   . $HOME/.bashrc
-CMD 	[ "/bin/bash","chmod +x $HOME/cmd.sh", "$HOME/cmd.sh" ]
+CMD 	[ "/bin/bash" , "$HOME/cmd.sh" ]
