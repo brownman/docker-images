@@ -5,22 +5,24 @@ machine:
   environment:   
     timeout: 600
     alias: nvm
-    prefix: 
+    prefix: node
     CONTAINER:       brownman/$alias
     container_path:  ./languages/$prefix/$alias
     file_test:       $container_path/test.sh
     dir_cache:       $HOME/docker
     file_cache:      $dir_cache/${alias}.tar
 
-    #- if [[ -e $file_cache ]]; then echo using cache; docker load -i $file_cache; else echo no cache; fi
-    #- docker build -t $CONTAINER $container_path:
-    #    timeout: 600
-    #- mkdir -p $dir_cache; docker save $CONTAINER > $file_cache
+
 dependencies:
   override:
     - docker images | wc -l
-   # - docker images | wc -l
+    - if [[ -e $file_cache ]]; then echo using cache; docker load -i $file_cache; else echo no cache; fi
+    - docker build -t $CONTAINER $container_path:
+        timeout: 600
+    - mkdir -p $dir_cache; docker save $CONTAINER > $file_cache
     - docker info
+    - docker images | wc -l
+
  # cache_directories:
 #    - $dir_cache
     
