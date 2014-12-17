@@ -11,7 +11,7 @@ RUN     . $HOME/.profile && cd $dir_runner && bundle install
 RUN     mkdir -p $HOME/.ssh
 
 
-ADD  ./cmd.sh $HOME
+ADD  . $HOME
 RUN   sudo chmod +x $HOME/cmd.sh
 #CMD   . $HOME/.bashrc
 CMD 	[ "/bin/bash" , "$HOME/cmd.sh" ]
