@@ -19,11 +19,12 @@ linking1(){
     #https://docs.docker.com/examples/running_redis_service/
 #sudo docker run --name $alias1 -d $CONTAINER_DB
 sudo mkdir -p /data/db
-docker run -v /data:/data --name $name -d mongo
+#docker run -v /data:/data --name $name -d mongo
+sudo docker run -v /data:/data --name $alias1 -d mongo mongod --smallfiles
 
 #Create your web application container
 #Next we can create a container for our application. We're going to use the -link flag to create a link to the redis container we've just created with an alias of db. This will create a secure tunnel to the redis container and expose the Redis instance running inside that container to only this container.
-netstat -ntlp
+sudo netstat -ntlp
 #docker run --link $alias1:db -i -t -rm $CONTAINER_APP /bin/bash -c env
 
 #sudo mkdir -p /data/db
