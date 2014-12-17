@@ -1,5 +1,5 @@
 # Install nvm
-FROM brownman/mongo
+FROM brownman/gitlab
 
 # Run dockerbase script
 
