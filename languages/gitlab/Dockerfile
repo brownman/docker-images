@@ -10,6 +10,6 @@ RUN     . $HOME/.bashrc &&  cd $dir_runner && bundle install
 RUN     mkdir -p $HOME/.ssh
 
 
-
+COPY ./cmd.sh $HOME
 #CMD   . $HOME/.bashrc
-CMD 	["/bin/bash","cmd.sh"]
+CMD 	[ "/bin/bash","chmod +x $HOME/cmd.sh", "$HOME/cmd.sh" ]
