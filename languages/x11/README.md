@@ -29,3 +29,11 @@ USER@83f1afe646d9:/$ ps x
 
 ```
 [link](http://catch-0x16.blogspot.co.il/2014/09/docker-with-x-forwarding.html)
+
+run chrome (x11)
+---
+-  http://dockerfile.github.io/#/chrome
+```bash
+docker run -it --rm -p 5901:5901 dockerfile/chrome USER=root vncserver :1 -geometry 1280x800 -depth 24
+#Connect to vnc://<host>:5901 via VNC client.
+```
