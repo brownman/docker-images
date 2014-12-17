@@ -24,8 +24,9 @@ sudo docker run -v /data:/data --name $alias1 -d mongo mongod --smallfiles &
 sleep 5
 #Create your web application container
 #Next we can create a container for our application. We're going to use the -link flag to create a link to the redis container we've just created with an alias of db. This will create a secure tunnel to the redis container and expose the Redis instance running inside that container to only this container.
-sudo netstat -ntlp
-#docker run --link $alias1:db -i -t -rm $CONTAINER_APP /bin/bash -c env
+sudo netstat -ntlp | grep mongo && (
+docker run --link $alias1:db -i -t -rm $CONTAINER_APP /bin/bash -c 'env | grep db'
+) || (  echo 1>&2 mongod is not running; )
 
 #sudo mkdir -p /data/db
 #docker run -v /data:/data --name mongodb -d mongo
