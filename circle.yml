@@ -4,7 +4,7 @@ machine:
     
   environment:   
     timeout: 600
-    alias: gitlab
+    alias: onbuild
     prefix: 
     CONTAINER:       brownman/$alias
     container_path:  ./languages/$prefix/$alias
@@ -28,7 +28,7 @@ dependencies:
 test:
   override:
     - docker run -it brownman/gitlab bash -c 'ls -l $HOME'
-
+    - docker run -i $CONTAINER bash -c < $container_path/test.sh
 #else:
 #    - docker run -it brownman/apt bash -c 'ls -l $HOME'
 #    - docker run -it brownman/user bash -c 'ls -l $HOME'
