@@ -1,5 +1,7 @@
 touch 1
-ls -l 1
+ls -l
+pwd
+commander pwd
 source ~/.bashrc
 source ~/.nvm/nvm.sh
 netstat -ntlp | grep mongo
