@@ -28,7 +28,7 @@ dependencies:
     
 test:
   override:
-    - chmod +x ./test.sh && ./test.sh
+    - chmod +x ./test_linking.sh && ./test_linking.sh
     - docker run --name some-mongo -d mongo &&  docker run -i $CONTAINER bash < $file_test;
     
 
