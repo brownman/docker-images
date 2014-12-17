@@ -12,7 +12,10 @@ FROM brownman/nvm
 #ONBUILD RUN toilet --gay 'mean.io'
 #CMD netstat -ntpl | grep mongo
 #RUN . ~/.bashrc && cd myApp && ls -l && grunt test
-COPY  ./patch/*.js myApp/config/env/
+COPY  ./patch/test.js myApp/config/env/test.js
+COPY  ./patch/development.js myApp/config/env/development.js
+COPY  ./patch/production.js myApp/config/env/production.js
+
 CMD [ "/bin/bash" , "netstat -ntlp | grep mongo", "source $HOME/.bashrc", "source $HOME/.nvm.sh", "cd myApp", "ls -l ", "grunt test" ]
 
 #ONBUILD RUN cd myApp
