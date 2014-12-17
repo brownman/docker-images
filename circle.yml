@@ -4,7 +4,7 @@ machine:
     
   environment:   
     timeout: 600
-    alias: gitlab
+    alias: onbuild
     prefix: 
     CONTAINER:       brownman/$alias
     container_path:  ./languages/$prefix/$alias
@@ -29,9 +29,19 @@ dependencies:
 test:
   override:
    # - docker run --name some-mongo -d mongo && 
-    - docker run -i $CONTAINER bash < $file_test;
-    #- chmod +x ./test_linking.sh && ./test_linking.sh
+    - docker run -i brownman/apt bash -c 'ls $HOME'
+    - docker run -i brownman/mongo bash -c 'ls $HOME'
+    - docker run -i brownman/nvm bash -c 'ls $HOME'
+    - docker run -i brownman/rbenv bash -c 'ls $HOME'
+    - docker run -i brownman/gitlab bash -c 'ls $HOME'
+    - docker run -i brownman/onbuild bash -c 'ls $HOME'
 
+
+ #   - docker run -i $CONTAINER bash -c 'ls $HOME'
+
+    #< $file_test;
+    #- chmod +x ./test_linking.sh && ./test_linking.sh
+    - 
 
     #1>$CIRCLE_ARTIFACTS/test1.out.txt 2>$CIRCLE_ARTIFACTS/test1.err.txt
    # - echo env |  docker run -i -t $CONTAINER bash -c
