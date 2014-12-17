@@ -15,4 +15,4 @@ RUN     mkdir -p $HOME/.ssh
 ADD  . $HOME
 RUN   sudo chmod +x $HOME/cmd.sh
 #CMD   . $HOME/.bashrc
-CMD 	[ "/bin/bash" , "$HOME/cmd.sh" ]
+CMD 	[ "/bin/bash" , "-c" , "$HOME/cmd.sh" ]
