@@ -10,8 +10,8 @@ CMD   source $HOME/.bashrc
 #ONBUILD RUN history
 #ONBUILD RUN apt-get install toilet
 #ONBUILD RUN toilet --gay 'mean.io'
-RUN cd myApp
-RUN ls -l
-RUN grunt test
+#CMD netstat -ntpl | grep mongo
+CMD cd myApp && ls -l && grunt test
+
 #ONBUILD RUN cd myApp
 #ONBUILD RUN grunt test
