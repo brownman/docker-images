@@ -2,7 +2,7 @@
 
 set_env(){
     cmd='python app.py'
-    CONTAINER_APP='brownman/nvm' 
+    CONTAINER_APP='brownman/onbuild' 
     CONTAINER_DB='brownman/mongo'         
     vol_from='/src/webapp'
     vol_to='/opt/webapp'
