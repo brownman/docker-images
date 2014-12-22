@@ -1,3 +1,6 @@
+. $HOME/.profile
+. $HOME/.bashrc
+
 cd myApp; 
 ls
 grunt test
