@@ -11,7 +11,7 @@ test:
   override:
     - git clone --depth=1 https://github.com/brownman/docker_playground.git
     - chmod u+x ./docker_playground/circle.sh
-    - ./docker_playground/circle.sh $PWD/languages/$dir_container
+    - ./docker_playground/circle.sh "$PWD/languages/$dir_container"
   # - docker run -it brownman/gitlab bash -c 'ls -l $HOME'
   #  - docker run -i $CONTAINER bash < $container_path/test.sh
 #else:
