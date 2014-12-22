@@ -10,6 +10,7 @@ admin priv
 use empty password
 -----
 - https://gist.github.com/crosbymichael/5794209
+- http://www.yegor256.com/2014/08/29/docker-non-root.html
 
 sudoers
 ---
