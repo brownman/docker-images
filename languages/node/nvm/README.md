@@ -1,0 +1,4 @@
+- install nvm: node + npm
+- install mean dependencies: grunt + gulp
+- run mean: mean status
+- run mean: grunt test
