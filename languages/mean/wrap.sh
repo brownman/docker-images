@@ -1,3 +1,10 @@
+#!/usr/bin/env bash
+set -e
+sudo netstat -ntlp
+
+sudo service mongod status
+sudo service mongod stop
+env
 
 docker build -t mean .
 docker run -p 27017:27017 -d --name db mongo
