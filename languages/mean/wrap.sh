@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 set -e
 sudo netstat -ntlp
+pidof mongod | xargs kill -9
 
-sudo service mongod status
-sudo service mongod stop
+#sudo service mongod status
+#sudo service mongod stop
 env
 
 docker build -t mean .
