@@ -8,7 +8,9 @@ sudo netstat -ntlp
 #sudo service mongod stop
 env
 
-docker build -t mean .
+#docker build -t mean .
+docker build -t brownman/mean
+
 docker run -p 27017:27017 -d --name db mongo
 #docker run -p 3000:3000 --link db:db_1 mean
 
