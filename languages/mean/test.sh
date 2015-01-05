@@ -1,3 +1,4 @@
+echo hello world
 env
 netstat -ntlp
 ps fax
