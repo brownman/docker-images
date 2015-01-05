@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 set -e
 sudo netstat -ntlp
-pidof mongod | xargs kill -9
+pidof mongod | xargs sudo kill -9
+sudo netstat -ntlp
 
 #sudo service mongod status
 #sudo service mongod stop
