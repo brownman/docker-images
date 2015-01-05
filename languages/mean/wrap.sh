@@ -20,4 +20,4 @@ docker run -p 27017:27017 -d --name db mongo
 #To enable live reload, forward port 35729 
 docker run -p 3000:3000 -p 35729:35729  --link db:db_1 mean
 
-commander 'docker run -i mean bash < test.sh'
+docker run -i mean bash < test.sh
