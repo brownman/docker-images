@@ -13,9 +13,10 @@ machine:
     
 test:
   override:
-    - cd "languages/$dir_container";
+    - cd languages/$dir_container
+    - ls -l
     - sudo chmod u+x *.sh
-    - ./wrap.sh
+    - bash -c ./wrap.sh
     
     
     #- git clone --depth=1 https://github.com/brownman/docker_playground.git
