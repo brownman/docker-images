@@ -37,7 +37,7 @@ RUN echo 'eval "$(grunt --completion=bash)"' >> ~/.bashrc
 #ADD . /home/mean
 
 # currently only works for development
-ENV NODE_ENV test
+ENV NODE_ENV development
 
 # Port 3000 for server
 # Port 35729 for livereload
