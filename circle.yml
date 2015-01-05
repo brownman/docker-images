@@ -13,9 +13,15 @@ machine:
     
 test:
   override:
-    - git clone --depth=1 https://github.com/brownman/docker_playground.git
-    - chmod u+x ./docker_playground/circle.sh
-    - ./docker_playground/circle.sh "$PWD/languages/$dir_container"
+    - cd "$PWD/languages/$dir_container";
+    - chmod u+x *.sh
+    - ./wrapper.sh
+    
+    
+    #- git clone --depth=1 https://github.com/brownman/docker_playground.git
+    #- chmod u+x ./docker_playground/circle.sh
+   # - ./docker_playground/circle.sh "$PWD/languages/$dir_container"
+
    # - docker run -i $container_name bash < "$PWD/languages/$dir_container/test.sh"
    
    
