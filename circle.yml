@@ -4,7 +4,8 @@ machine:
     
   environment:   
     timeout: 600
-    dir_container: node/nvm
+    dir_container: example
+    #node/nvm
     
     
 test:
