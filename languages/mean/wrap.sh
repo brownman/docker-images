@@ -23,6 +23,6 @@ docker run -v /data:/data -p 27017:27017 -p 28017:28017 -d --name mongo_deamon b
 
 #To enable live reload, forward port 35729 
 #docker run -p 3000:3000 -p 35729:35729  --link mongo_deamon:db -t brownman/mean
-docker run -p 3000:3000 -p 35729:35729  --link mongo_deamon:db --i t brownman/mean bash < test.sh
+docker run -p 3000:3000 -p 35729:35729  --link mongo_deamon:db -i -t brownman/mean bash < test.sh
 
 #docker run -i -t brownman/mean bash < test.sh
