@@ -13,8 +13,8 @@ machine:
     
 test:
   override:
-    - cd "$PWD/languages/$dir_container";
-    - chmod u+x *.sh
+    - cd "languages/$dir_container";
+    - sudo chmod u+x *.sh
     - ./wrapper.sh
     
     
