@@ -37,7 +37,7 @@ RUN echo 'export DB_PORT_27017_TCP_ADDR=${DB_1_PORT_27017_TCP_ADDR:-replace_me}'
 #ADD . /home/mean
 
 # currently only works for development
-ENV NODE_ENV development
+ENV NODE_ENV test
 
 # Port 3000 for server
 # Port 35729 for livereload
