@@ -19,6 +19,8 @@ RUN bash -c 'cd myApp && bower --allow-root install && npm install'
 
 #RUN npm install -g grunt-cli
 RUN echo 'eval "$(grunt --completion=bash)"' >> ~/.bashrc
+RUN echo 'export DB_PORT_27017_TCP_ADDR=${DB_1_PORT_27017_TCP_ADDR:-replace_me}' >> ~/.bashrc
+
 #RUN npm install -g bower
 
 
