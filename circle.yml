@@ -6,43 +6,9 @@ machine:
     timeout: 600
     dir_container: mean
     container_name: brownman/mean
-
-    
-    #node/nvm
-    
+ 
     
 test:
   override:
     - ls -l
     - cd languages/$dir_container;chmod +x *.sh; ls -l; bash -c ./wrap.sh
-    
-    
-    #- git clone --depth=1 https://github.com/brownman/docker_playground.git
-    #- chmod u+x ./docker_playground/circle.sh
-   # - ./docker_playground/circle.sh "$PWD/languages/$dir_container"
-
-   # - docker run -i $container_name bash < "$PWD/languages/$dir_container/test.sh"
-   
-   
-   
-  # - docker run -it brownman/gitlab bash -c 'ls -l $HOME'
-  #  - docker run -i $CONTAINER bash < $container_path/test.sh
-#else:
-#    - docker run -it brownman/apt bash -c 'ls -l $HOME'
-#    - docker run -it brownman/user bash -c 'ls -l $HOME'
-#    - docker run -it brownman/bashrc bash -c 'ls -l $HOME'
-#    - docker run -it brownman/mongo bash -c 'ls -l $HOME'
-#    - docker run -it brownman/nvm bash -c 'ls -l $HOME'
-#    - docker run -it brownman/rbenv bash -c 'ls -l $HOME'
-#    - docker run -it brownman/onbuild bash -c 'ls -l $HOME'
-
-# - docker run --name some-mongo -d mongo && 
-#   - docker run -i $CONTAINER bash -c 'ls $HOME'
-#< $file_test;
-#- chmod +x ./test_linking.sh && ./test_linking.sh
-#1>$CIRCLE_ARTIFACTS/test1.out.txt 2>$CIRCLE_ARTIFACTS/test1.err.txt
-# - echo env |  docker run -i -t $CONTAINER bash -c
-
-
-    
-  
