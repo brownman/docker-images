@@ -7,7 +7,20 @@ WORKDIR /home/mean
 # Install Mean.JS Prerequisites
 RUN npm install -g grunt-cli bower mean-cli
 RUN bash -c 'echo -e "myApp\n" | mean init'
-RUN bash -c 'cd myApp;sudo npm install -g; npm link; env'
+RUN bash -c 'cd myApp && bower --allow-root install && npm install'
+
+#Express
+#RUN npm install express -g
+
+#MEAN
+#RUN git clone https://github.com/linnovate/mean.git
+#RUN cd mean && \
+#    npm install
+
+#RUN npm install -g grunt-cli
+RUN echo 'eval "$(grunt --completion=bash)"' >> ~/.bashrc
+#RUN npm install -g bower
+
 
 # Install Mean.JS packages
 #ADD package.json /home/mean/package.json
