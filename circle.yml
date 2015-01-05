@@ -4,7 +4,7 @@ machine:
     
   environment:   
     timeout: 600
-    dir_container: example
+    dir_container: meanjs
     #node/nvm
     
     
