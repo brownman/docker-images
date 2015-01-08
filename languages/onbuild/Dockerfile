@@ -16,7 +16,7 @@ COPY  ./patch/test.js myApp/config/env/test.js
 COPY  ./patch/development.js myApp/config/env/development.js
 COPY  ./patch/production.js myApp/config/env/production.js
 
-CMD [ "/bin/bash" , "netstat -ntlp | grep mongo", "source $HOME/.bashrc", "source $HOME/.nvm.sh", "cd myApp", "ls -l ", "grunt test" ]
-
+#CMD [ "/bin/bash" , "netstat -ntlp | grep mongo", "source $HOME/.bashrc", "source $HOME/.nvm.sh", "cd myApp", "ls -l ", "grunt test" ]
+CMD [ "/usr/bin/env bash" , 'env' ]
 #ONBUILD RUN cd myApp
 #ONBUILD RUN grunt test
