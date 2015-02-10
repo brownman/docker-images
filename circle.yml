@@ -4,8 +4,8 @@ machine:
     
   environment:   
     timeout: 600
-    dir_container: mean
-    container_name: brownman/mean
+    dir_container: selenium
+    container_name: brownman/selenium
  
     
 test:
