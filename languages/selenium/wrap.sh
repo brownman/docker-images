@@ -11,7 +11,7 @@ env
 
 #RUN TESTS
 docker pull vvoyer/docker-selenium-firefox-chrome
-docker run --privileged -p 4444:4444 -p 5999:5999 -d vvoyer/docker-selenium-firefox-chrome < test.sh &
+docker run --privileged -p 4444:4444 -p 5999:5999 -d vvoyer/docker-selenium-firefox-chrome # < test.sh &
 docker ps
 
 
