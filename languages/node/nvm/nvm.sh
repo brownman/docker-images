@@ -16,7 +16,7 @@ wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.20.0/install.sh | 
 mean1(){
 source $HOME.profile
 source $HOME.bashrc
-echo -e '\n' | mean init myApp
+echo -e '\n\n' | mean init myApp
 cd myApp
 npm install -g
 npm link
