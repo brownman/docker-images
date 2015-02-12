@@ -1,6 +1,9 @@
 #!/bin/bash 
+set -u
 
+intro(){
 echo which docker image should I pull ?
+}
 
 commander(){ 
     local args=($@);
@@ -29,7 +32,7 @@ container1='vvoyer/docker-selenium-firefox-chrome'
 container2='eperoumalnaik/docker-chrome-selenium'
 }
 
-intro(){
+print_info(){
 ps fax
 netstat -ntlp
 env
@@ -50,10 +53,15 @@ commander curl $address/status
 run_link(){
 #docker run -v /data:/data -p 27017:27017 -p 28017:28017 -d --name mongo_deamon brownman/mongo sh -c 'mongod --rest --httpinterface --smallfiles'
 #docker run -p 3000:3000 -p 35729:35729  --link mongo_deamon:db -i brownman/mean bash < test.sh &
+echo running tests...
 docker run -p $port:$port $port_vlc:$port_vlc  --link $name1:db -i $container_base bash < test.sh &
 }
-
+steps(){
+intro
+set_env
 try run_host $container1
 try run_link $container1
+}
 
+steps
 
