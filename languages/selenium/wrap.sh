@@ -59,8 +59,8 @@ docker run -p $port:$port $port_vlc:$port_vlc  --link $name1:db -i $container_ba
 steps(){
 intro
 set_env
-try run_host $container1
-try run_link $container1
+try run_host $container2
+try run_link $container2
 }
 
 steps
