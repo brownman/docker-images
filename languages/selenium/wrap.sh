@@ -17,5 +17,5 @@ docker ps
 
 
 #ACCESS FROM HOST
-while true; do  curl $address 2>/dev/null && break || { echo waiting for selenium-server; }; sleep 1 ; done
+while true; do  curl $address &>/dev/null && break || { echo waiting for selenium-server; }; sleep 1 ; done
 curl $address/status
