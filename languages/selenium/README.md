@@ -13,6 +13,7 @@ TODO:
 QUERY
 ---
 - [selenium + docker](https://www.google.co.il/search?q=selenium%20docker)
+- [official](https://github.com/SeleniumHQ/docker-selenium)
 
 ```bash
 docker run selenium/standalone-chrome:2.44.0 &
