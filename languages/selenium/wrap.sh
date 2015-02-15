@@ -38,29 +38,30 @@ netstat -ntlp
 env
 }
 
-run_host(){
+start_deamon(){
   local container="$1"
-  
   commander docker pull $container
-  commander docker run --privileged -p $port:$port -p $port_vlc:$port_vlc -d --name $name1 $container # < test.sh &
+  commander docker run --privileged -p $port:$port -p $port_vlc:$port_vlc -d --name $name1 $container 
   docker ps
-  
+}
+
+validate_deamon(){
 #ACCESS FROM HOST
 while true; do  try curl $address &>/dev/null && break || { echo waiting for selenium-server; }; sleep 1 ; done
 commander curl $address/status
 }
 
-run_link(){
-#docker run -v /data:/data -p 27017:27017 -p 28017:28017 -d --name mongo_deamon brownman/mongo sh -c 'mongod --rest --httpinterface --smallfiles'
-#docker run -p 3000:3000 -p 35729:35729  --link mongo_deamon:db -i brownman/mean bash < test.sh &
+link_containers(){
 echo running tests...
-docker run -p $port:$port $port_vlc:$port_vlc  --link $name1:db -i $container_base bash < test.sh &
+local container=$1
+docker run -p $port:$port $port_vlc:$port_vlc  --link $name1:db -i $container bash < test.sh &
 }
 steps(){
 intro
 set_env
-try run_host $container2
-try run_link $container2
+try start_deamon $container2
+try validate_deamon
+try link_containers $container_base
 }
 
 steps
