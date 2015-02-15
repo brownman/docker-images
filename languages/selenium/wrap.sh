@@ -22,11 +22,14 @@ try(){
 #PRINT HOST ENV
 set_env(){
 name1=selenium
-container_base='brownman/nvm'
+container_base='brownman/onbuild'
 host='0.0.0.0'
 port=4444
 port_vlc=5999
 address="$host:$port"
+address_status="$address/$path/status"
+
+path='wd/hub'
 #RUN TESTS
 #container1='vvoyer/docker-selenium-firefox-chrome'
 container_selenium='eperoumalnaik/docker-chrome-selenium'
@@ -48,7 +51,7 @@ start_deamon(){
 validate_deamon(){
 #ACCESS FROM HOST
 while true; do  try curl $address &>/dev/null && break || { echo waiting for selenium-server; }; sleep 1 ; done
-commander curl $address/status
+commander curl $address_status
 }
 
 link_containers(){
