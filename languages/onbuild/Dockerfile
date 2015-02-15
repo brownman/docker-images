@@ -1,6 +1,6 @@
 FROM brownman/gitlab
 
-ADD . $HOME/selenium.sh
+ADD . $HOME
 #CMD   . $HOME/.bashrc
 
 #RUN git clone --depth=1 https://github.com/brownman/install_config_test 
