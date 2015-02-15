@@ -27,9 +27,9 @@ host='0.0.0.0'
 port=4444
 port_vlc=5999
 address="$host:$port"
+path='wd/hub'
 address_status="$address/$path/status"
 
-path='wd/hub'
 #RUN TESTS
 #container1='vvoyer/docker-selenium-firefox-chrome'
 container_selenium='eperoumalnaik/docker-chrome-selenium'
