@@ -28,8 +28,8 @@ port=4444
 port_vlc=5999
 address="$host:$port"
 #RUN TESTS
-container1='vvoyer/docker-selenium-firefox-chrome'
-container2='eperoumalnaik/docker-chrome-selenium'
+#container1='vvoyer/docker-selenium-firefox-chrome'
+container_selenium='eperoumalnaik/docker-chrome-selenium'
 }
 
 print_info(){
@@ -59,7 +59,7 @@ docker run -p $port:$port $port_vlc:$port_vlc  --link $name1:db -i $container ba
 steps(){
 intro
 set_env
-try start_deamon $container2
+try start_deamon $container_selenium
 try validate_deamon
 try link_containers $container_base
 }
