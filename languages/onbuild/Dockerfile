@@ -16,8 +16,7 @@ COPY  ./patch/test.js myApp/config/env/test.js
 COPY  ./patch/development.js myApp/config/env/development.js
 COPY  ./patch/production.js myApp/config/env/production.js
 
-RUN sudo chmod 755 $HOME/selenium.sh && bash -c $HOME/selenium.sh 
-RUN sudo chmod 755 $HOME/ionic.sh && bash -c $HOME/ionic.sh 
+#RUN sudo chmod 755 $HOME/selenium.sh && bash -c $HOME/selenium.sh 
 
 
 #CMD [ "/bin/bash" , "netstat -ntlp | grep mongo", "source $HOME/.bashrc", "source $HOME/.nvm.sh", "cd myApp", "ls -l ", "grunt test" ]
