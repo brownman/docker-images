@@ -16,6 +16,7 @@ COPY  ./patch/test.js myApp/config/env/test.js
 COPY  ./patch/development.js myApp/config/env/development.js
 COPY  ./patch/production.js myApp/config/env/production.js
 
+
 #RUN sudo chmod 755 $HOME/selenium.sh && bash -c $HOME/selenium.sh 
 
 
