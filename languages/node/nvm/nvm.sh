@@ -26,11 +26,11 @@ npm link
 ionic_karma_test(){
   git clone https://github.com/brownman/ChkBook.git
   cd ChkBook
-  nvm link
-  bower install
+  nvm installl -g
+  bower install -g
   #gulp karma
   #npm install -g grunt-cli
-    ./node_modules/karma/bin/karma start karma.conf.js --browsers Chrome --single-run; 
+ echo   ./node_modules/karma/bin/karma start karma.conf.js --browsers Chrome --single-run; 
 
 }
 steps(){
