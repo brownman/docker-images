@@ -4,7 +4,7 @@ machine:
     
   environment:   
     timeout: 600
-    dir_container: nvm
+    dir_container: node/nvm
     container_name: brownman/nvm
  
     
