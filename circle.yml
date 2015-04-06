@@ -4,8 +4,8 @@ machine:
     
   environment:   
     timeout: 600
-    dir_container: onbuild
-    container_name: brownman/onbuild
+    dir_container: nvm
+    container_name: brownman/nvm
  
     
 test:
