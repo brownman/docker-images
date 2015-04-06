@@ -10,7 +10,7 @@ wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.20.0/install.sh | 
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" && nvm alias default 0.10.33
 
 # Install brunch
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" && npm install -g bower grunt grunt-cli mean-cli gulp se-interpreter cordova ionic
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" && npm install -g bower grunt grunt-cli mean-cli gulp se-interpreter cordova ionic    
 }
 
 mean1(){
@@ -23,9 +23,19 @@ npm link
 ( mean status ) || true
 ( grunt test ) || true
 }
+ionic_karma_test(){
+  git clone https://github.com/brownman/ChkBook.git
+  cd ChkBook
+  nvm link
+  bower install
+  #gulp karma
+  #npm install -g grunt-cli
+    ./node_modules/karma/bin/karma start karma.conf.js --browsers Chrome --single-run; fi
 
+}
 steps(){
 nvm1
-mean1
+#mean1
+ionic_karma_test
 }
 steps
