@@ -1,9 +1,8 @@
 . $HOME/.profile
 . $HOME/.bashrc
 
-cd myApp; 
-ls
-grunt test
+test -d myApp && cd myApp && ls && grunt test
+test -d ChkBook && cd ChkBook && ls && npm test
 
 node -v
 npm -v
