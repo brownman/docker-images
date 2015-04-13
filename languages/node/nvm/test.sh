@@ -2,7 +2,7 @@
 . $HOME/.bashrc
 
 test -d myApp && cd myApp && ls && grunt test
-test -d ChkBook && cd ChkBook && ls && npm test
+test -d ChkBook && cd ChkBook && ls && ( ./node_modules/karma/bin/karma start karma.conf.js --browsers Chrome --single-run; ) #npm test
 
 node -v
 npm -v
