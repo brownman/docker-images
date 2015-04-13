@@ -30,7 +30,6 @@ ionic_karma_test(){
   bower install -g
   #gulp karma
   #npm install -g grunt-cli
- ./node_modules/karma/bin/karma start karma.conf.js --browsers Chrome --single-run; 
 
 }
 steps(){
