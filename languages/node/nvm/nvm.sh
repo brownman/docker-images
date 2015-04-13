@@ -15,8 +15,7 @@ wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.20.0/install.sh | 
 }
 
 mean1(){
-source $HOME.profile
-source $HOME.bashrc
+
 echo -e '\n\n' | mean init myApp
 cd myApp
 npm install -g
@@ -27,7 +26,7 @@ npm link
 ionic_karma_test(){
   git clone https://github.com/brownman/ChkBook.git
   cd ChkBook
-  nvm installl -g
+  npm installl -g
   bower install -g
   #gulp karma
   #npm install -g grunt-cli
@@ -36,6 +35,8 @@ ionic_karma_test(){
 }
 steps(){
 nvm1
+source $HOME/.profile
+source $HOME/.bashrc
 #mean1
 ionic_karma_test
 }
