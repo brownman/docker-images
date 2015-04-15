@@ -36,7 +36,7 @@ steps(){
 nvm1
 source $HOME/.profile
 source $HOME/.bashrc
-#mean1
+mean1
 ionic_karma_test
 }
 steps
