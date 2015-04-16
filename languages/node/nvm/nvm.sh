@@ -19,9 +19,10 @@ mean1(){
 echo -e '\n\n' | mean init myApp
 cd myApp
 npm install -g
-npm link
-( mean status ) || true
-( grunt test ) || true
+bower install -g
+#npm link
+#( mean status ) || true
+#( grunt test ) || true
 }
 ionic_karma_test(){
   git clone https://github.com/brownman/ChkBook.git
