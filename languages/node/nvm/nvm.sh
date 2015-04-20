@@ -25,8 +25,8 @@ bower install -g
 #( grunt test ) || true
 }
 ionic_karma_test(){
-  git clone https://github.com/brownman/ChkBook.git
-  cd ChkBook
+  git clone https://github.com/brownman/flight.git #https://github.com/brownman/ChkBook.git
+  cd flight #ChkBook
   npm installl -g
   bower install -g
   #gulp karma
