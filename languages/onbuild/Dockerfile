@@ -22,7 +22,8 @@ COPY  ./patch/production.js myApp/config/env/production.js
 
 
 #CMD [ "/bin/bash" , "netstat -ntlp | grep mongo", "source $HOME/.bashrc", "source $HOME/.nvm.sh", "cd myApp", "ls -l ", "grunt test" ]
-CMD [ "/usr/bin/env bash" , 'env' ]
+CMD [ "/bin/bash" ,  "source $HOME/.bashrc", "source $HOME/.nvm.sh", "npm install -g phantomjs" ]
+#CMD [ "/usr/bin/env bash" , 'env' ]
 #ONBUILD RUN cd myApp
 #ONBUILD RUN grunt test
 
