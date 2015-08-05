@@ -19,11 +19,11 @@ COPY  ./patch/production.js myApp/config/env/production.js
 
 
 #RUN sudo chmod 755 $HOME/ionic.sh && bash -c $HOME/ionic.sh 
-
+RUN sudo chmod 755 $HOME/phantom.sh && bash -c $HOME/phantom.sh 
 
 #CMD [ "/bin/bash" , "netstat -ntlp | grep mongo", "source $HOME/.bashrc", "source $HOME/.nvm.sh", "cd myApp", "ls -l ", "grunt test" ]
-CMD [ "/bin/bash" ,  "source $HOME/.bashrc", "source $HOME/.nvm.sh", "npm install -g phantomjs" ]
-#CMD [ "/usr/bin/env bash" , 'env' ]
+#CMD [ "/bin/bash" ,  "source $HOME/.bashrc", "source $HOME/.nvm.sh", "npm install -g phantomjs" ]
+CMD [ "/usr/bin/env bash" , 'env' ]
 #ONBUILD RUN cd myApp
 #ONBUILD RUN grunt test
 
