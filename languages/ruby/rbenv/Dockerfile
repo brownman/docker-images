@@ -1,4 +1,4 @@
-FROM brownman/nvm
+FROM brownman/bashrc
 
 ENV 		INSTALL_RUBY_VERSION 2.1.0
 ENV     CONFIGURE_OPTS --disable-install-doc
