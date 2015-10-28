@@ -13,7 +13,7 @@ ENV      dir_runner $HOME/runner
 ADD     ./cmd.sh $HOME/
 
 RUN     mkdir $HOME/runner_not
-RUN     git clone --depth=1 https://github.com/brownman/gitlab-ci-runner.git runner
+RUN     git clone https://github.com/gitlabhq/gitlab-ci-runner.git runner
 #"$dir_runner" 
 #RUN     . $HOME/.bashrc && 
 RUN     . $HOME/.profile && cd $dir_runner && bundle install 
